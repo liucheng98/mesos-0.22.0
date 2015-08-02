@@ -100,7 +100,7 @@ static string encode(uint64_t position, bool adjust = true)
   // stream.WriteVarint64(position);
   // return s;
 
-  Try<string> s = strings::format("%.*d", 10, position);
+  Try<string> s = strings::format("%.*llu", 10, position);
   CHECK_SOME(s);
   return s.get();
 }
